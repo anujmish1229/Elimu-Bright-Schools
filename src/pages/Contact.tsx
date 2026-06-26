@@ -6,7 +6,7 @@ const Contact = () => (
     <PageHero
       image="/pics/about-hero.jpg"
       title="Contact Us"
-      subtitle="We'd love to hear from you"
+      subtitle="Want to support, partner, or learn more? We'd love to hear from you."
     />
 
     <section className="py-20 bg-background">
@@ -16,7 +16,7 @@ const Contact = () => (
           <div>
             <h2 className="font-display text-2xl font-bold text-foreground mb-6">Get in Touch</h2>
             <p className="text-muted-foreground font-body leading-relaxed mb-8">
-              Whether you want to donate, partner, volunteer, or simply learn more — we're here and eager to connect.
+              Whether you want to donate, partner, volunteer, or simply learn more — we are here and eager to connect. Reach out to us directly and we will get back to you as soon as possible.
             </p>
             <div className="space-y-6">
               <a
@@ -82,7 +82,7 @@ const Contact = () => (
                 <textarea
                   rows={5}
                   className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
-                  placeholder="How would you like to help?"
+                  placeholder="How would you like to get involved?"
                 />
               </div>
               <button

@@ -7,8 +7,8 @@ const Index = () => (
     <section className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
       <img
         src="/pics/hero-home.jpg"
-        alt="Children at Elimu Bright Schools"
-        className="absolute inset-0 w-full h-full object-cover"
+        alt="Children learning at Elimu Bright Schools"
+        className="absolute inset-0 w-full h-full object-cover object-center"
         width={1920}
         height={1080}
       />
@@ -19,12 +19,11 @@ const Index = () => (
             Kabaale Sub-county · Hoima District · Uganda
           </p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-            Every Child Deserves a Classroom,{" "}
-            <span className="text-secondary">Not a Tree.</span>
+            Education for Marginalized Children in Uganda{" "}
+            <span className="text-secondary">Enlightening Young Minds in Underserved Communities</span>
           </h1>
           <p className="text-lg text-primary-foreground/85 mb-8 font-body leading-relaxed">
-            Over 4,000 children in our community have no school. Some learn under trees — lessons stop when it rains.
-            Elimu Bright Schools is changing that, one classroom at a time.
+            In Kabaale Sub-county, Western Uganda, thousands of children grow up with the desire to learn but without access to a classroom. For many families, education is not a guarantee. It is a privilege they cannot reach.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -49,10 +48,10 @@ const Index = () => (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "36", label: "Children Served" },
-            { value: "4,000+", label: "Out-of-School Kids" },
-            { value: "200+", label: "Per Classroom (Gov't)" },
-            { value: "1", label: "Founder's Age: 19" },
+            { value: "36", label: "Children Now in School" },
+            { value: "4,000+", label: "Children Out of School" },
+            { value: "200+", label: "Children Per Classroom (Gov't)" },
+            { value: "2,000+", label: "Learners at Gov't School" },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="font-display text-3xl md:text-4xl font-bold text-secondary">{stat.value}</div>
@@ -73,55 +72,93 @@ const Index = () => (
             </h2>
             <div className="space-y-4 text-muted-foreground font-body leading-relaxed">
               <p>
-                In Kabaale Sub-county, one government school serves <strong className="text-foreground">over 2,000 learners</strong>. That's more than 200 children per classroom.
+                The national pupil-to-teacher ratio in Uganda's primary schools averages about <strong className="text-foreground">43:1</strong>, but this increases significantly in rural and underserved areas.
               </p>
               <p>
-                Thousands more have <strong className="text-foreground">no school at all</strong>. They learn under trees, with untrained volunteer teachers. When it rains, class is cancelled.
+                The only government school in the area serves <strong className="text-foreground">over 2,000 learners</strong>. Classrooms often hold more than 200 children with a single teacher. Beyond this, <strong className="text-foreground">over 4,000 children</strong> remain completely out of school.
               </p>
               <p>
-                These aren't just numbers. They're children losing their futures — every single day.
+                Some children sit under trees, learning from untrained individuals. When it rains, any lessons stop. When conditions become unsafe, learning disappears.
+              </p>
+              <p>
+                This is the reality Elimu Bright Schools is working to change.
               </p>
             </div>
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img
-              src="/pics/classroom.jpg"
-              alt="Children learning in a crowded classroom"
-              className="w-full h-[350px] object-cover"
+              src="/pics/child-at-chalkboard.jpg"
+              alt="Child writing at the chalkboard at Elimu Bright Schools"
+              className="w-full h-[350px] object-cover object-top"
               loading="lazy"
-              width={1200}
-              height={800}
             />
           </div>
         </div>
       </div>
     </section>
 
-    {/* Founder */}
+    {/* Who We Are */}
     <section className="py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="rounded-lg overflow-hidden shadow-xl">
+            <img
+              src="/pics/team-with-children.jpg"
+              alt="Founder and team with children at Elimu Bright Schools"
+              className="w-full h-[400px] object-cover object-top"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Who We Are</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+              A Community-Based Education Charity in Uganda Creating Change
+            </h2>
+            <div className="space-y-4 text-muted-foreground font-body leading-relaxed">
+              <p>
+                Elimu Bright Schools is a community-based nonprofit education organization in Uganda dedicated to expanding access to quality, culturally relevant education.
+              </p>
+              <p>
+                Founded to respond to a growing education crisis, the organization is creating safe learning spaces for children who would otherwise remain excluded from quality learning and from school.
+              </p>
+              <p>
+                What began as a small initiative is now a growing movement, restoring access to education, dignity, and opportunity for underserved children.
+              </p>
+            </div>
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 mt-6 text-primary font-semibold hover:underline"
+            >
+              Read Our Full Story <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Founder */}
+    <section className="py-20" style={{ background: "var(--section-gradient)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 rounded-lg overflow-hidden shadow-xl">
             <img
               src="/pics/founder.jpg"
-              alt="Samuel Usabuwera, Founder"
-              className="w-full h-[400px] object-cover"
+              alt="Samuel Usabuwera, Founder of Elimu Bright Schools"
+              className="w-full h-[400px] object-cover object-top"
               loading="lazy"
-              width={800}
-              height={1000}
             />
           </div>
           <div className="order-1 md:order-2">
-            <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Meet the Founder</p>
+            <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">A Story Behind This Education Initiative in Uganda</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
               Samuel Usabuwera
             </h2>
             <div className="space-y-4 text-muted-foreground font-body leading-relaxed">
               <p>
-                A 19-year-old Rwandan refugee from Kyangwali Refugee Camp, Samuel saw the crisis firsthand and decided to act.
+                Elimu Bright Schools was founded by Samuel Usabuwera, a 19-year-old Rwandan refugee, and his peers Moses Kasereka and Mugisa Latif. Having experienced overcrowded classrooms and limited access to education firsthand, he understood the barriers that prevent children from learning.
               </p>
               <p>
-                He built Elimu Bright Schools from the ground up — a grassroots response to a massive need.
+                Instead of accepting this reality, they chose to respond to it. Today, his work is helping provide education for marginalized and refugee children in Uganda, starting with his own community.
               </p>
               <p className="text-sm text-accent font-semibold">
                 Mastercard Foundation Youth Advisory Council Member · Admitted to African Leadership Academy, South Africa
@@ -138,18 +175,30 @@ const Index = () => (
       </div>
     </section>
 
-    {/* What We Do */}
-    <section className="py-20" style={{ background: "var(--section-gradient)" }}>
+    {/* What We Are Building */}
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">What We're Building</h2>
-        <p className="text-muted-foreground font-body max-w-2xl mx-auto mb-12">
-          More than a school — a movement for dignity, identity, and opportunity.
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">What We Are Building</h2>
+        <p className="text-muted-foreground font-body max-w-3xl mx-auto mb-12">
+          Our work focuses on addressing the root causes of limited access to education. We are developing safe classrooms, supporting learners with essential school materials, and working toward sustainable solutions such as school feeding programs and community empowerment initiatives.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { icon: BookOpen, title: "Quality Education", desc: "Nursery & primary schooling with trained teachers and a real curriculum." },
-            { icon: Heart, title: "Feeding Program", desc: "Daily meals so children can focus on learning, not hunger." },
-            { icon: Users, title: "Community Empowerment", desc: "Solar lamps, family support, and refugee scholarships." },
+            {
+              icon: BookOpen,
+              title: "Quality Education",
+              desc: "Nursery and primary schooling in a safe, supportive environment. We intentionally integrate cultural studies into our curriculum so every child grows with a strong sense of identity and belonging.",
+            },
+            {
+              icon: Heart,
+              title: "Feeding Program",
+              desc: "Daily meals so children can focus on learning, not hunger. A school farm is planned to make the program self-sustaining and give learners practical agricultural skills.",
+            },
+            {
+              icon: Users,
+              title: "Community Empowerment",
+              desc: "Solar lamps, family economic support, adult literacy programs, and refugee scholarships — because a child's success is deeply connected to their home environment.",
+            },
           ].map((item) => (
             <div key={item.title} className="bg-card rounded-lg p-8 text-left shadow-sm hover:shadow-md transition-shadow">
               <item.icon className="text-secondary mb-4" size={32} />
@@ -167,21 +216,58 @@ const Index = () => (
       </div>
     </section>
 
+    {/* Why It Matters */}
+    <section className="py-20" style={{ background: "var(--section-gradient)" }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Why Supporting Education in Uganda Matters
+          </h2>
+          <p className="text-muted-foreground font-body leading-relaxed mb-8">
+            Access to education is one of the most powerful tools for breaking cycles of poverty. When you choose to support education in Uganda, you are helping:
+          </p>
+          <ul className="text-left space-y-3 text-muted-foreground font-body max-w-md mx-auto mb-10">
+            {[
+              "Provide children with learning opportunities",
+              "Build confidence and future employment pathways",
+              "Strengthen communities and promote self-reliance",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="text-secondary font-bold mt-0.5">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-foreground font-body font-semibold">
+            Education does not just change one life; it can transform entire communities.
+          </p>
+        </div>
+      </div>
+    </section>
+
     {/* CTA */}
     <section className="relative py-24 overflow-hidden">
       <img
-        src="/pics/community.jpg"
-        alt="Community"
-        className="absolute inset-0 w-full h-full object-cover"
+        src="/pics/children-school-outside.jpg"
+        alt="Children at Elimu Bright Schools"
+        className="absolute inset-0 w-full h-full object-cover object-top"
         loading="lazy"
       />
       <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       <div className="relative z-10 max-w-3xl mx-auto text-center px-4">
         <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-          You Can Change This
+          Help Children Go to School in Uganda
         </h2>
-        <p className="text-lg text-primary-foreground/85 mb-8 font-body">
-          Every dollar builds a wall. Every partnership opens a door. Every sponsor gives a child their future back.
+        <p className="text-lg text-primary-foreground/85 mb-4 font-body">
+          There are still thousands of children in Kabaale and surrounding communities who are waiting for access to education.
+        </p>
+        <ul className="text-primary-foreground/80 font-body mb-8 space-y-1">
+          <li>More classrooms are needed.</li>
+          <li>More resources are required.</li>
+          <li>More children are ready to learn.</li>
+        </ul>
+        <p className="text-primary-foreground/85 mb-8 font-body">
+          Whether through donations, partnerships, or sponsorship, you can be part of a solution that is already making a difference.
         </p>
         <Link
           to="/get-involved"

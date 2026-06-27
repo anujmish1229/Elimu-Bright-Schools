@@ -62,7 +62,7 @@ const programs = [
     detail: "We intentionally weave cultural learning throughout our teaching because we want every child to be proud of who they are and where they come from. By embracing their heritage and roots, our learners begin to understand that success does not mean leaving their communities behind — it means growing from within them, contributing to them, and becoming agents of positive change for them.",
     why: "When children understand and value who they are, they grow with confidence, purpose, and direction. A strong sense of identity empowers them to succeed not by leaving their communities behind, but by contributing positively to them.",
     cta: "Support us to establish a cultural and crafts room and develop a powerful cultural program.",
-    image: null,
+    image: "/pics/children-class-attentive.jpg",
   },
   {
     icon: Sun,
@@ -83,6 +83,7 @@ const programs = [
     why: "Refugee children are among the most vulnerable, yet they hold immense potential.",
     cta: "Sponsor a refugee child and help them access education and opportunity.",
     image: "/pics/founder-with-children.jpg",
+    imagePosition: "object-bottom",
   },
 ];
 
@@ -111,7 +112,7 @@ const Programs = () => (
           {programs.map((program, i) => (
             <div
               key={program.title}
-              className={`grid md:grid-cols-2 gap-10 items-start ${i % 2 === 1 ? "" : ""}`}
+              className={`grid md:grid-cols-2 gap-10 items-stretch ${i % 2 === 1 ? "" : ""}`}
             >
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
                 {program.badge && (
@@ -135,16 +136,16 @@ const Programs = () => (
                 </div>
                 <p className="mt-3 text-sm text-secondary font-semibold font-body">{program.cta}</p>
               </div>
-              <div className={`rounded-lg overflow-hidden shadow-lg ${i % 2 === 1 ? "md:order-1" : ""}`}>
+              <div className={`relative rounded-lg overflow-hidden shadow-lg min-h-[280px] ${i % 2 === 1 ? "md:order-1" : ""}`}>
                 {program.image ? (
                   <img
                     src={program.image}
                     alt={program.title}
-                    className="w-full h-[320px] object-cover object-top"
+                    className={`absolute inset-0 w-full h-full object-cover ${program.imagePosition ?? "object-top"}`}
                     loading="lazy"
                   />
                 ) : (
-                  <div className="w-full h-[320px] bg-muted flex items-center justify-center">
+                  <div className="absolute inset-0 bg-muted flex items-center justify-center">
                     <program.icon className="text-muted-foreground/30" size={64} />
                   </div>
                 )}

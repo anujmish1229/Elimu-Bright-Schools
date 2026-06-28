@@ -44,13 +44,13 @@ const Contact = () => {
                 Whether you want to donate, partner, volunteer, or simply learn more — we are here and eager to connect. Reach out to us directly and we will get back to you as soon as possible.
               </p>
               <div className="space-y-6">
-                <a href="mailto:samuel@elimubrightschools.org" className="flex items-start gap-4 group">
+                <a href="mailto:info@elimubrightschools.org" className="flex items-start gap-4 group">
                   <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                     <Mail size={20} />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground font-body">Email</p>
-                    <p className="text-muted-foreground text-sm font-body">samuel@elimubrightschools.org</p>
+                    <p className="text-muted-foreground text-sm font-body">info@elimubrightschools.org</p>
                   </div>
                 </a>
                 <a href="tel:+256761258092" className="flex items-start gap-4 group">
@@ -142,7 +142,7 @@ const Contact = () => {
 
                   {error && (
                     <p className="text-sm text-destructive font-body">
-                      Something went wrong. Please email us directly at samuel@elimubrightschools.org.
+                      Something went wrong. Please email us directly at info@elimubrightschools.org.
                     </p>
                   )}
 

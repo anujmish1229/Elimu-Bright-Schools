@@ -178,12 +178,12 @@ const About = () => (
     {/* Founder */}
     <section className="py-20" style={{ background: "var(--section-gradient)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="rounded-lg overflow-hidden shadow-xl">
+        <div className="grid md:grid-cols-2 gap-12 items-stretch">
+          <div className="relative rounded-lg overflow-hidden shadow-xl min-h-[300px]">
             <img
               src="/pics/founder.jpg"
               alt="Samuel Usabuwera, Founder of Elimu Bright Schools"
-              className="w-full h-[500px] object-cover object-top"
+              className="absolute inset-0 w-full h-full object-cover object-top"
               loading="lazy"
             />
           </div>

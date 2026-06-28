@@ -217,6 +217,38 @@ const About = () => (
         </div>
       </div>
     </section>
+
+    {/* Board of Directors */}
+    <section className="py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Our Team</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Board of Directors</h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {[
+            { name: "Samuel Usabuwera", role: "CEO", image: "/pics/board/Samuel_Usabuwera-CEO.jpg" },
+            { name: "Moses Kasereka", role: "Finance Officer", image: "/pics/board/Moses_Kasereka-Finance_Office.jpg" },
+            { name: "Mugisa Latif", role: "Programs Manager", image: "/pics/board/Mugisa_Latif-Programs_Manager.jpg" },
+            { name: "Esther Mugisha", role: "Public Relations Manager", image: "/pics/board/Esther_Mugisha-Public_Relations_Manager.jpg" },
+            { name: "Isaac Felecian", role: "Fundraising Assistant", image: "/pics/board/Isaac_Felecian-Fundraising_Assistant.jpg" },
+          ].map((member) => (
+            <div key={member.name} className="flex flex-col items-center text-center">
+              <div className="relative w-full rounded-xl overflow-hidden shadow-md mb-4" style={{ paddingBottom: "120%" }}>
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-display font-semibold text-foreground text-base leading-snug">{member.name}</h3>
+              <p className="text-secondary text-sm font-body mt-1">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   </div>
 );
 

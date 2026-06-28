@@ -34,8 +34,8 @@ const Footer = () => (
         <div>
           <h4 className="font-display text-lg font-semibold mb-4">Contact</h4>
           <div className="space-y-3 text-sm text-primary-foreground/80">
-            <a href="mailto:samuel@elimubrightschools.org" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
-              <Mail size={16} /> samuel@elimubrightschools.org
+            <a href="mailto:info@elimubrightschools.org" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
+              <Mail size={16} /> info@elimubrightschools.org
             </a>
             <a href="tel:+256761258092" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
               <Phone size={16} /> +256 761258092

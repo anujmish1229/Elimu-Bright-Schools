@@ -223,7 +223,7 @@ const About = () => (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Our Team</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Board of Directors</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Our Management Team</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {[

@@ -18,7 +18,7 @@ const Footer = () => (
               { to: "/about", label: "About Us" },
               { to: "/programs", label: "Programs" },
               { to: "/roadmap", label: "Our Vision" },
-              { to: "/get-involved", label: "Get Involved" },
+              { to: "/donate", label: "Donate" },
               { to: "/contact", label: "Contact" },
             ].map((link) => (
               <Link

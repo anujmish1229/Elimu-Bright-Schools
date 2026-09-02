@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
 import Roadmap from "./pages/Roadmap";
-import GetInvolved from "./pages/GetInvolved";
+import Donate from "./pages/Donate";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -34,7 +34,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/roadmap" element={<Roadmap />} />
-            <Route path="/get-involved" element={<GetInvolved />} />
+            <Route path="/donate" element={<Donate />} />
             <Route path="/contact" element={<Contact />} />
           </Route>
           <Route path="*" element={<NotFound />} />

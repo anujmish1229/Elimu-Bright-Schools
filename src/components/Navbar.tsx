@@ -7,7 +7,6 @@ const navLinks = [
   { to: "/about", label: "About Us" },
   { to: "/programs", label: "Programs" },
   { to: "/roadmap", label: "Our Vision" },
-  { to: "/get-involved", label: "Get Involved" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -39,7 +38,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link
-              to="/get-involved"
+              to="/donate"
               className="ml-2 px-4 py-2 text-sm font-semibold rounded-md bg-secondary text-secondary-foreground hover:opacity-90 transition-opacity"
             >
               Donate
@@ -76,7 +75,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link
-              to="/get-involved"
+              to="/donate"
               onClick={() => setOpen(false)}
               className="block mt-2 px-4 py-2 text-sm font-semibold text-center rounded-md bg-secondary text-secondary-foreground"
             >

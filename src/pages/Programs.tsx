@@ -175,7 +175,7 @@ const Programs = () => (
           Every program at Elimu Bright Schools is an opportunity to change a life. Whether you choose to support education, infrastructure, feeding, or community empowerment, your contribution directly impacts children who need it most.
         </p>
         <Link
-          to="/get-involved"
+          to="/donate"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
         >
           Get Involved <ArrowRight size={18} />

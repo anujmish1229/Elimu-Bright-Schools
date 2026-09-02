@@ -27,7 +27,7 @@ const Index = () => (
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              to="/get-involved"
+              to="/donate"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-secondary text-secondary-foreground font-semibold hover:opacity-90 transition-opacity"
             >
               Donate Now <Heart size={18} />
@@ -270,7 +270,7 @@ const Index = () => (
           Whether through donations, partnerships, or sponsorship, you can be part of a solution that is already making a difference.
         </p>
         <Link
-          to="/get-involved"
+          to="/donate"
           className="inline-flex items-center gap-2 px-8 py-4 rounded-md bg-secondary text-secondary-foreground font-bold text-lg hover:opacity-90 transition-opacity"
         >
           Get Involved Today <Heart size={20} />

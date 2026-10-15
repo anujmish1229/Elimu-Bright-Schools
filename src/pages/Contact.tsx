@@ -77,7 +77,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-card rounded-lg p-8 shadow-sm border border-border">
+            <div className="bg-card rounded-lg p-8 shadow-xs border border-border">
               <h3 className="font-display text-xl font-semibold text-foreground mb-6">Send a Message</h3>
 
               {submitted ? (
@@ -111,7 +111,7 @@ const Contact = () => {
                       required
                       value={fields.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground font-body text-sm focus:outline-hidden focus:ring-2 focus:ring-ring"
                       placeholder="Your name"
                     />
                   </div>
@@ -123,7 +123,7 @@ const Contact = () => {
                       required
                       value={fields.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground font-body text-sm focus:outline-hidden focus:ring-2 focus:ring-ring"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -135,7 +135,7 @@ const Contact = () => {
                       required
                       value={fields.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground font-body text-sm focus:outline-hidden focus:ring-2 focus:ring-ring resize-none"
                       placeholder="How would you like to get involved?"
                     />
                   </div>

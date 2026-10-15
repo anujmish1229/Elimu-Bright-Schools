@@ -1,5 +1,5 @@
 import PageHero from "@/components/PageHero";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { BookOpen, Building, ShoppingBag, Utensils, Palette, Globe, Sun, GraduationCap, ArrowRight } from "lucide-react";
 
 const programs = [

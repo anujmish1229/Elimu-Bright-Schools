@@ -114,13 +114,13 @@ const About = () => (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-card rounded-lg p-10 shadow-sm">
+          <div className="bg-card rounded-lg p-10 shadow-xs">
             <h3 className="font-display text-2xl font-bold text-foreground mb-4">Our Mission</h3>
             <p className="text-muted-foreground font-body leading-relaxed">
               To deliver quality, culturally relevant education to marginalized communities. We are committed not only to teaching children how to read and write, but also to helping them understand who they are, where they come from, and what they are capable of becoming.
             </p>
           </div>
-          <div className="bg-primary rounded-lg p-10 shadow-sm">
+          <div className="bg-primary rounded-lg p-10 shadow-xs">
             <h3 className="font-display text-2xl font-bold text-primary-foreground mb-4">Our Vision</h3>
             <p className="text-primary-foreground/85 font-body leading-relaxed">
               A future where every child in underserved communities has access to safe, inclusive, and empowering education that enables them to thrive and build self-reliant lives.
@@ -165,7 +165,7 @@ const About = () => (
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((v) => (
-            <div key={v.title} className="bg-card rounded-lg p-8 text-left shadow-sm">
+            <div key={v.title} className="bg-card rounded-lg p-8 text-left shadow-xs">
               <v.icon className="text-secondary mb-4" size={28} />
               <h3 className="font-display text-lg font-semibold text-foreground mb-2">{v.title}</h3>
               <p className="text-muted-foreground text-sm font-body">{v.desc}</p>

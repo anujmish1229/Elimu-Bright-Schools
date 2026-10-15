@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import PageHero from "@/components/PageHero";
 import {
   Dialog,
@@ -44,9 +44,9 @@ const MOBILE_MONEY = {
   number: "+256 761258092",
 };
 
-// TODO: replace with the real GoFundMe campaign URL (e.g. https://www.gofundme.com/f/your-campaign-slug).
-const GOFUNDME_CAMPAIGN_URL = "https://www.gofundme.com/f/REPLACE-WITH-CAMPAIGN-SLUG";
-const GOFUNDME_WIDGET_URL = `${GOFUNDME_CAMPAIGN_URL}/widget/large`;
+// Set to the campaign URL (e.g. "https://www.gofundme.com/f/your-campaign-slug") once a campaign exists.
+// While it is null, the "Can't use mobile money?" GoFundMe option stays hidden.
+const GOFUNDME_CAMPAIGN_URL: string | null = null;
 
 const CopyField = ({ label, value }: { label: string; value: string }) => {
   const [copied, setCopied] = useState(false);
@@ -103,7 +103,7 @@ const Donate = () => {
 
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Primary: Mobile Money */}
-          <div className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
+          <div className="bg-card rounded-2xl border border-border shadow-xs overflow-hidden">
             <div className="h-1.5 w-full bg-primary" />
             <div className="p-8">
               <div className="flex items-center gap-4 mb-6">
@@ -127,7 +127,8 @@ const Donate = () => {
             </div>
           </div>
 
-          {/* Secondary: GoFundMe */}
+          {/* Secondary: GoFundMe (only shown once a campaign URL is configured) */}
+          {GOFUNDME_CAMPAIGN_URL && (
           <div className="text-center mt-8">
             <button
               type="button"
@@ -137,9 +138,11 @@ const Donate = () => {
               Can't use mobile money?
             </button>
           </div>
+          )}
         </div>
       </section>
 
+      {GOFUNDME_CAMPAIGN_URL && (
       <Dialog open={gofundmeOpen} onOpenChange={setGofundmeOpen}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
@@ -151,7 +154,7 @@ const Donate = () => {
 
           <div className="rounded-lg overflow-hidden border border-border" style={{ height: "70vh" }}>
             <iframe
-              src={GOFUNDME_WIDGET_URL}
+              src={`${GOFUNDME_CAMPAIGN_URL}/widget/large`}
               title="GoFundMe donation widget"
               className="w-full h-full"
               frameBorder={0}
@@ -168,6 +171,7 @@ const Donate = () => {
           </a>
         </DialogContent>
       </Dialog>
+      )}
 
       {/* Other Ways to Get Involved */}
       <section className="py-20" style={{ background: "var(--section-gradient)" }}>
@@ -185,7 +189,7 @@ const Donate = () => {
             {otherWays.map((way) => (
               <div
                 key={way.title}
-                className="bg-card rounded-xl p-6 shadow-sm border border-border text-center flex flex-col items-center"
+                className="bg-card rounded-xl p-6 shadow-xs border border-border text-center flex flex-col items-center"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <way.icon className="text-primary" size={22} />
@@ -214,7 +218,7 @@ const Donate = () => {
         />
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
         <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4 leading-tight flex items-center justify-center gap-3">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4 leading-tight md:leading-10 flex items-center justify-center gap-3">
             <Heart size={32} /> Thank You
           </h2>
           <p className="text-primary-foreground/85 font-body leading-relaxed">

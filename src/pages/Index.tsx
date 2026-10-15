@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Heart, BookOpen, Users, ArrowRight } from "lucide-react";
 
 const Index = () => (
@@ -18,7 +18,7 @@ const Index = () => (
           <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-4 font-body">
             Kabaale Sub-county · Hoima District · Uganda
           </p>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight md:leading-none mb-6">
             Education for Marginalized Children in Uganda{" "}
             <span className="text-secondary">Enlightening Young Minds in Underserved Communities</span>
           </h1>
@@ -200,7 +200,7 @@ const Index = () => (
               desc: "Solar lamps, family economic support, adult literacy programs, and refugee scholarships — because a child's success is deeply connected to their home environment.",
             },
           ].map((item) => (
-            <div key={item.title} className="bg-card rounded-lg p-8 text-left shadow-sm hover:shadow-md transition-shadow">
+            <div key={item.title} className="bg-card rounded-lg p-8 text-left shadow-xs hover:shadow-md transition-shadow">
               <item.icon className="text-secondary mb-4" size={32} />
               <h3 className="font-display text-xl font-semibold text-foreground mb-2">{item.title}</h3>
               <p className="text-muted-foreground text-sm font-body">{item.desc}</p>

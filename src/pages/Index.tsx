@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Heart, BookOpen, Users, ArrowRight } from "lucide-react";
 
 const Index = () => (

@@ -34,6 +34,60 @@ const values = [
   },
 ];
 
+type Person = { name: string; role: string; image?: string };
+
+const managementTeam: Person[] = [
+  { name: "Samuel Usabuwera", role: "CEO", image: "/pics/board/Samuel_Usabuwera-CEO.jpg" },
+  { name: "Isaac Felecian", role: "Fundraising Assistant", image: "/pics/board/Isaac_Felecian-Fundraising_Assistant.jpg" },
+  { name: "Johnam Kambasu", role: "Finance Director", image: "/pics/board/Johnam_Kambasu-Finance_Director.jpg" },
+  { name: "Moses Kasereka", role: "Finance Officer", image: "/pics/board/Moses_Kasereka-Finance_Office.jpg" },
+  { name: "Mugisa Latif", role: "Programs Manager", image: "/pics/board/Mugisa_Latif-Programs_Manager.jpg" },
+  { name: "Esther Mugisha", role: "Public Relations Manager", image: "/pics/board/Esther_Mugisha-Public_Relations_Manager.jpg" },
+];
+
+// Members without a photo yet show an initials placeholder; add `image` once a photo is available.
+const boardMembers: Person[] = [
+  { name: "Kevin Dovinna", role: "Board Member", image: "/pics/board/Kevin_Dovinna-Board_Member.jpg" },
+  { name: "Vaolah Amumpaire", role: "Board Member" },
+  { name: "Candy Kevine", role: "Board Member" },
+  { name: "Steven R Ongaria", role: "Board Member" },
+  { name: "Ekta Mishra", role: "Board Member" },
+];
+
+const initials = (name: string) =>
+  name
+    .split(" ")
+    .filter(Boolean)
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+
+const PersonCard = ({ name, role, image }: Person) => (
+  <div className="flex flex-col items-center text-center w-36 sm:w-40 lg:w-64">
+    <div className="relative w-full rounded-xl overflow-hidden shadow-md mb-4" style={{ paddingBottom: "120%" }}>
+      {image ? (
+        <img
+          src={image}
+          alt={name}
+          className="absolute inset-0 w-full h-full object-cover object-top"
+          loading="lazy"
+        />
+      ) : (
+        <div
+          className="absolute inset-0 flex items-center justify-center bg-primary text-primary-foreground font-display text-4xl font-bold"
+          role="img"
+          aria-label={name}
+        >
+          {initials(name)}
+        </div>
+      )}
+    </div>
+    <h3 className="font-display font-semibold text-foreground text-base leading-snug">{name}</h3>
+    <p className="text-secondary text-sm font-body mt-1">{role}</p>
+  </div>
+);
+
 const About = () => (
   <div>
     <PageHero
@@ -218,7 +272,7 @@ const About = () => (
       </div>
     </section>
 
-    {/* Board of Directors */}
+    {/* Management Team */}
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
@@ -226,27 +280,23 @@ const About = () => (
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Our Management Team</h2>
         </div>
         <div className="flex flex-wrap justify-center gap-6">
-          {[
-            { name: "Samuel Usabuwera", role: "CEO", image: "/pics/board/Samuel_Usabuwera-CEO.jpg" },
-            { name: "Kevin Dovinna", role: "Board Member", image: "/pics/board/Kevin_Dovinna-Board_Member.jpg" },
-            { name: "Isaac Felecian", role: "Fundraising Assistant", image: "/pics/board/Isaac_Felecian-Fundraising_Assistant.jpg" },
-            { name: "Johnam Kambasu", role: "Finance Director", image: "/pics/board/Johnam_Kambasu-Finance_Director.jpg" },
-            { name: "Moses Kasereka", role: "Finance Officer", image: "/pics/board/Moses_Kasereka-Finance_Office.jpg" },
-            { name: "Mugisa Latif", role: "Programs Manager", image: "/pics/board/Mugisa_Latif-Programs_Manager.jpg" },
-            { name: "Esther Mugisha", role: "Public Relations Manager", image: "/pics/board/Esther_Mugisha-Public_Relations_Manager.jpg" },
-          ].map((member) => (
-            <div key={member.name} className="flex flex-col items-center text-center w-36 sm:w-40 lg:w-64">
-              <div className="relative w-full rounded-xl overflow-hidden shadow-md mb-4" style={{ paddingBottom: "120%" }}>
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="absolute inset-0 w-full h-full object-cover object-top"
-                  loading="lazy"
-                />
-              </div>
-              <h3 className="font-display font-semibold text-foreground text-base leading-snug">{member.name}</h3>
-              <p className="text-secondary text-sm font-body mt-1">{member.role}</p>
-            </div>
+          {managementTeam.map((member) => (
+            <PersonCard key={member.name} {...member} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Board of Directors */}
+    <section className="py-20" style={{ background: "var(--section-gradient)" }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Governance</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Our Board Members</h2>
+        </div>
+        <div className="flex flex-wrap justify-center gap-6">
+          {boardMembers.map((member) => (
+            <PersonCard key={member.name} {...member} />
           ))}
         </div>
       </div>

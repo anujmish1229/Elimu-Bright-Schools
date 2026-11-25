@@ -1,6 +1,6 @@
 import PageHero from "@/components/PageHero";
 import { Link } from "react-router";
-import { BookOpen, Building, ShoppingBag, Utensils, Palette, Globe, Sun, GraduationCap, ArrowRight } from "lucide-react";
+import { BookOpen, Building, ShoppingBag, Utensils, Palette, Globe, Sun, GraduationCap, ArrowRight, ArrowDown } from "lucide-react";
 
 const programs = [
   {
@@ -87,6 +87,13 @@ const programs = [
   },
 ];
 
+const slug = (title: string) =>
+  title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
 // Light bands alternate with dark ones; the dark order differs from other pages.
 const programTones = [
   "bg-background",
@@ -108,18 +115,41 @@ const Programs = () => (
       imagePosition="object-top"
     />
 
-    {/* Intro */}
-    <section className="tone-gold py-16 md:py-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="font-display text-2xl md:text-3xl leading-snug">
-          At Elimu Bright Schools, we believe that education goes beyond the classroom. It is about shaping confident, capable, and self-reliant individuals. Our programs are designed to address not only the lack of access to education, but also the deeper challenges that prevent children from thriving — including poverty, hunger, and limited opportunities.
+    {/* Intro, with a jump list to each program */}
+    <section className="py-16 md:py-24 bg-[hsl(38_32%_93%)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 md:grid-cols-12 md:gap-16">
+        <p className="md:col-span-7 font-body text-lg md:text-xl leading-relaxed text-muted-foreground max-w-prose">
+          <span className="text-foreground font-semibold">
+            At Elimu Bright Schools, we believe that education goes beyond the classroom.
+          </span>{" "}
+          It is about shaping confident, capable, and self-reliant individuals. Our programs are designed to address not only the lack of access to education, but also the deeper challenges that prevent children from thriving — including poverty, hunger, and limited opportunities.
         </p>
+        <nav aria-label="Programs on this page" className="md:col-span-5">
+          <h2 className="font-display text-xl font-semibold text-foreground mb-3">Our Programs</h2>
+          <ul className="border-t border-foreground/15">
+            {programs.map((program) => (
+              <li key={program.title} className="border-b border-foreground/15">
+                <a
+                  href={`#${slug(program.title)}`}
+                  className="group flex items-center justify-between gap-4 py-2.5 font-body text-foreground/85 hover:text-primary transition-colors"
+                >
+                  {program.title}
+                  <ArrowDown size={16} className="shrink-0 opacity-40 group-hover:opacity-100 group-hover:translate-y-0.5 transition" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </section>
 
     {/* Programs: each one gets its own band, rotating light and dark tones */}
     {programs.map((program, i) => (
-      <section key={program.title} className={`py-16 md:py-24 ${programTones[i % programTones.length]}`}>
+      <section
+        key={program.title}
+        id={slug(program.title)}
+        className={`scroll-mt-16 py-16 md:py-24 ${programTones[i % programTones.length]}`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-stretch">
             <div className={i % 2 === 1 ? "md:order-2" : ""}>

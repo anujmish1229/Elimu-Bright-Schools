@@ -121,7 +121,7 @@ const About = () => (
     </section>
 
     {/* Who We Are */}
-    <section className="py-20" style={{ background: "var(--section-gradient)" }}>
+    <section className="py-20 md:py-28 tone-forest">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -144,7 +144,7 @@ const About = () => (
               </p>
             </div>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-xl">
+          <div className="rounded-lg overflow-hidden shadow-2xl shadow-black/30">
             <img
               src="/pics/children-engaged-class.jpg"
               alt="Children attentively listening in class at Elimu Bright Schools"
@@ -157,21 +157,21 @@ const About = () => (
     </section>
 
     {/* Mission & Vision */}
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-card rounded-lg p-10 shadow-xs">
-            <h3 className="font-display text-2xl font-bold text-foreground mb-4">Our Mission</h3>
-            <p className="text-muted-foreground font-body leading-relaxed">
-              To deliver quality, culturally relevant education to marginalized communities. We are committed not only to teaching children how to read and write, but also to helping them understand who they are, where they come from, and what they are capable of becoming.
-            </p>
-          </div>
-          <div className="bg-primary rounded-lg p-10 shadow-xs">
-            <h3 className="font-display text-2xl font-bold text-primary-foreground mb-4">Our Vision</h3>
-            <p className="text-primary-foreground/85 font-body leading-relaxed">
-              A future where every child in underserved communities has access to safe, inclusive, and empowering education that enables them to thrive and build self-reliant lives.
-            </p>
-          </div>
+    <section className="grid md:grid-cols-2">
+      <div className="tone-gold px-6 sm:px-10 lg:px-16 py-16 md:py-24">
+        <div className="max-w-xl md:ml-auto">
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-5">Our Mission</h2>
+          <p className="font-body text-lg leading-relaxed text-muted-foreground">
+            To deliver quality, culturally relevant education to marginalized communities. We are committed not only to teaching children how to read and write, but also to helping them understand who they are, where they come from, and what they are capable of becoming.
+          </p>
+        </div>
+      </div>
+      <div className="tone-maroon px-6 sm:px-10 lg:px-16 py-16 md:py-24">
+        <div className="max-w-xl">
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-5">Our Vision</h2>
+          <p className="font-display italic text-2xl md:text-3xl leading-snug">
+            A future where every child in underserved communities has access to safe, inclusive, and empowering education that enables them to thrive and build self-reliant lives.
+          </p>
         </div>
       </div>
     </section>
@@ -203,7 +203,7 @@ const About = () => (
     </section>
 
     {/* Values */}
-    <section className="py-20 bg-background">
+    <section className="py-20 md:py-28 tone-ink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Our Core Values</h2>
         <p className="text-muted-foreground font-body max-w-2xl mb-12">
@@ -212,7 +212,7 @@ const About = () => (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10">
           {values.map((v) => (
             <div key={v.title} className="border-t border-foreground/15 pt-5 pb-10">
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">{v.title}</h3>
+              <h3 className="font-display text-xl font-semibold text-primary mb-2">{v.title}</h3>
               <p className="text-muted-foreground text-sm font-body leading-relaxed">{v.desc}</p>
             </div>
           ))}
@@ -221,7 +221,7 @@ const About = () => (
     </section>
 
     {/* Founder */}
-    <section className="py-20" style={{ background: "var(--section-gradient)" }}>
+    <section className="py-20 md:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-stretch">
           <div className="relative rounded-lg overflow-hidden shadow-xl min-h-[300px]">
@@ -264,7 +264,7 @@ const About = () => (
     </section>
 
     {/* Board Members */}
-    <section className="py-20 bg-background">
+    <section className="py-20 md:py-28 tone-clay">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Our Board Members</h2>

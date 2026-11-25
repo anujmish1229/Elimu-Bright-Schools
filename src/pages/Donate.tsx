@@ -163,7 +163,7 @@ const Donate = () => {
       )}
 
       {/* Other Ways to Get Involved */}
-      <section className="py-20" style={{ background: "var(--section-gradient)" }}>
+      <section className="py-20 md:py-28 tone-forest">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -195,19 +195,12 @@ const Donate = () => {
       </section>
 
       {/* Thank you */}
-      <section className="relative py-24 overflow-hidden">
-        <img
-          src="/pics/children-school-outside.jpg"
-          alt="Children at Elimu Bright Schools"
-          className="absolute inset-0 w-full h-full object-cover object-top"
-          loading="lazy"
-        />
-        <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
-        <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4 leading-tight md:leading-10 flex items-center justify-center gap-3">
+      <section className="tone-maroon py-20 md:py-28">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h2 className="font-display italic text-6xl md:text-8xl font-bold leading-none mb-8">
             Thank You
           </h2>
-          <p className="text-primary-foreground/85 font-body leading-relaxed">
+          <p className="text-muted-foreground font-body text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
             Your support turns into classrooms built, teachers paid, and children given the
             chance to learn. We're grateful you're part of this.
           </p>

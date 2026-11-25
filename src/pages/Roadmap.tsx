@@ -74,16 +74,16 @@ const Roadmap = () => (
     />
 
     {/* Intro */}
-    <section className="py-16 bg-background">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-muted-foreground font-body leading-relaxed text-lg">
+    <section className="tone-ink py-16 md:py-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="font-display text-2xl md:text-3xl leading-snug text-foreground">
           This vision is not just about buildings. It is about expanding access where none exists, creating continuity where it is missing, and building opportunity where it is needed most. Step by step, we are working toward a future where no child is left behind, and every young person has the opportunity to learn, grow, and thrive.
         </p>
       </div>
     </section>
 
     {/* Timeline */}
-    <section className="pb-20 bg-background">
+    <section className="py-20 md:py-28 bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative">
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-0.5" />
@@ -115,17 +115,23 @@ const Roadmap = () => (
           </div>
         </div>
 
-        {/* Bigger Picture */}
-        <div className="mt-20 bg-primary rounded-2xl p-10 text-center text-primary-foreground">
-          <h3 className="font-display text-2xl font-bold mb-4">The Bigger Picture</h3>
-          <p className="text-primary-foreground/85 font-body mb-6 max-w-xl mx-auto">
+      </div>
+    </section>
+
+    {/* Bigger Picture */}
+    <section className="tone-forest py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-10 md:grid-cols-12 items-end">
+        <div className="md:col-span-7">
+          <h2 className="font-display text-4xl md:text-6xl font-bold leading-[1.05] mb-6">The Bigger Picture</h2>
+          <p className="text-muted-foreground font-body text-lg leading-relaxed max-w-prose">
             This journey cannot be achieved alone. Every classroom built, every child supported, and every opportunity created is made possible through partnership. We invite you to stand with us — to invest in education, to believe in potential, and to be part of a movement that is enlightening young minds and transforming communities.
           </p>
-          <p className="text-primary-foreground/85 font-body font-semibold mb-8">Together, we can change the story for thousands of children.</p>
-          <Link
-            to="/donate"
-            className="btn btn-gold"
-          >
+        </div>
+        <div className="md:col-span-5">
+          <p className="font-display italic text-2xl md:text-3xl text-primary leading-snug mb-8">
+            Together, we can change the story for thousands of children.
+          </p>
+          <Link to="/donate" className="btn btn-gold btn-lg">
             Join Us <ArrowRight size={18} />
           </Link>
         </div>

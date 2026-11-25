@@ -269,3 +269,58 @@ layer(base);
     color: var(--primary-foreground);
   }
 }
+
+/*
+  Section tones. Each one sets a background and remaps the colour tokens
+  inside it, so text, borders, links and buttons adapt without per-element
+  overrides. Rotate them so neighbouring pages don't repeat the same order.
+*/
+@layer components {
+  .tone-forest,
+  .tone-maroon,
+  .tone-ink,
+  .tone-clay {
+    --foreground: hsl(40 30% 97%);
+    --muted-foreground: hsl(40 25% 92% / 0.8);
+    --primary: hsl(38 85% 58%);
+    --primary-foreground: hsl(20 25% 10%);
+    --secondary-ink: hsl(38 85% 62%);
+    --border: hsl(40 30% 97% / 0.2);
+    --muted: hsl(40 30% 97% / 0.08);
+    --card: hsl(40 30% 97% / 0.06);
+    background-color: var(--tone-bg);
+    color: var(--foreground);
+  }
+  .tone-forest {
+    --tone-bg: hsl(152 48% 17%);
+    --background: hsl(152 48% 17%);
+  }
+  .tone-maroon {
+    --tone-bg: hsl(1 46% 24%);
+    --background: hsl(1 46% 24%);
+  }
+  .tone-ink {
+    --tone-bg: hsl(20 22% 11%);
+    --background: hsl(20 22% 11%);
+  }
+  /* Gold is too close in value to clay for text, so clay uses cream accents */
+  .tone-clay {
+    --tone-bg: hsl(14 52% 33%);
+    --background: hsl(14 52% 33%);
+    --primary: hsl(40 30% 97%);
+    --secondary-ink: hsl(38 70% 80%);
+  }
+  .tone-gold {
+    --tone-bg: hsl(38 85% 55%);
+    --background: hsl(38 85% 55%);
+    --foreground: hsl(20 25% 10%);
+    --muted-foreground: hsl(20 25% 10% / 0.82);
+    --primary: hsl(152 48% 20%);
+    --primary-foreground: hsl(40 30% 97%);
+    --secondary-ink: hsl(20 25% 10%);
+    --border: hsl(20 25% 10% / 0.2);
+    --muted: hsl(20 25% 10% / 0.07);
+    background-color: var(--tone-bg);
+    color: var(--foreground);
+  }
+}

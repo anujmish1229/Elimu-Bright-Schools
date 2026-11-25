@@ -74,10 +74,13 @@ const Roadmap = () => (
     />
 
     {/* Intro */}
-    <section className="tone-ink py-16 md:py-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="font-display text-2xl md:text-3xl leading-snug text-foreground">
-          This vision is not just about buildings. It is about expanding access where none exists, creating continuity where it is missing, and building opportunity where it is needed most. Step by step, we are working toward a future where no child is left behind, and every young person has the opportunity to learn, grow, and thrive.
+    <section className="py-16 md:py-24 bg-[hsl(38_32%_93%)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-6 md:grid-cols-12 md:gap-16 items-start">
+        <p className="md:col-span-5 font-display text-3xl md:text-4xl font-bold leading-tight text-foreground">
+          This vision is not just about buildings.
+        </p>
+        <p className="md:col-span-7 md:pt-2 font-body text-lg md:text-xl leading-relaxed text-muted-foreground max-w-prose">
+          It is about expanding access where none exists, creating continuity where it is missing, and building opportunity where it is needed most. Step by step, we are working toward a future where no child is left behind, and every young person has the opportunity to learn, grow, and thrive.
         </p>
       </div>
     </section>

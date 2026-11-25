@@ -1,34 +1,27 @@
 import PageHero from "@/components/PageHero";
-import { Heart, Shield, Star, Users, Lightbulb, GraduationCap } from "lucide-react";
 
 const values = [
   {
-    icon: Shield,
     title: "Equity and Access",
     desc: "Ensuring that every child, regardless of their background, has the opportunity to learn.",
   },
   {
-    icon: Users,
     title: "Community Ownership",
     desc: "Working alongside local families and leaders to build solutions that are sustainable and meaningful.",
   },
   {
-    icon: Star,
     title: "Quality Education",
     desc: "Not just in content, but in delivery — ensuring that children receive an experience that truly nurtures both knowledge and confidence.",
   },
   {
-    icon: Heart,
     title: "Inclusivity",
     desc: "With a strong focus on supporting vulnerable groups, including refugee children and marginalized families.",
   },
   {
-    icon: Lightbulb,
     title: "Innovation and Growth",
     desc: "Constantly seeking better ways to improve learning and expand our impact.",
   },
   {
-    icon: GraduationCap,
     title: "Dignity and Respect",
     desc: "Recognizing the worth of every child and every community we serve.",
   },
@@ -37,7 +30,7 @@ const values = [
 type TeamMember = { name: string; role: string; image?: string };
 
 const boardMembers: TeamMember[] = [
-  { name: "Johnam Kambasu", role: "Board Member · Finance Director", image: "/pics/board/Johnam_Kambasu-Finance_Director.jpg" },
+  { name: "Johnam Kambasu", role: "Finance Director", image: "/pics/board/Johnam_Kambasu-Finance_Director.jpg" },
   { name: "Vaolah Amumpaire", role: "Board Member", image: "/pics/board/Vaolah_Amumpaire-Board_Member.jpg" },
   { name: "Candy Kevine", role: "Board Member", image: "/pics/board/Candy_Kevine-Board_Member.jpg" },
   { name: "Steven R Ongaria", role: "Board Member" },
@@ -81,7 +74,7 @@ const TeamGrid = ({ members }: { members: TeamMember[] }) => (
           )}
         </div>
         <h3 className="font-display font-semibold text-foreground text-base leading-snug">{member.name}</h3>
-        <p className="text-secondary text-sm font-body mt-1">{member.role}</p>
+        <p className="text-secondary-ink text-sm font-body mt-1">{member.role}</p>
       </div>
     ))}
   </div>
@@ -99,7 +92,7 @@ const About = () => (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Our Story</p>
+          <p className="font-display italic text-lg text-primary mb-1">Our Story</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">
             Born as a Response to a Crisis
           </h2>
@@ -132,7 +125,7 @@ const About = () => (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Who We Are</p>
+            <p className="font-display italic text-lg text-primary mb-1">Who We Are</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
               Part of the Community We Serve
             </h2>
@@ -211,17 +204,16 @@ const About = () => (
 
     {/* Values */}
     <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Our Core Values</h2>
-        <p className="text-muted-foreground font-body max-w-2xl mx-auto mb-12">
+        <p className="text-muted-foreground font-body max-w-2xl mb-12">
           At the heart of Elimu Bright Schools are values that guide every decision we make.
         </p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10">
           {values.map((v) => (
-            <div key={v.title} className="bg-card rounded-lg p-8 text-left shadow-xs">
-              <v.icon className="text-secondary mb-4" size={28} />
-              <h3 className="font-display text-lg font-semibold text-foreground mb-2">{v.title}</h3>
-              <p className="text-muted-foreground text-sm font-body">{v.desc}</p>
+            <div key={v.title} className="border-t border-foreground/15 pt-5 pb-10">
+              <h3 className="font-display text-xl font-semibold text-foreground mb-2">{v.title}</h3>
+              <p className="text-muted-foreground text-sm font-body leading-relaxed">{v.desc}</p>
             </div>
           ))}
         </div>
@@ -241,7 +233,7 @@ const About = () => (
             />
           </div>
           <div>
-            <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">The Founder</p>
+            <p className="font-display italic text-lg text-primary mb-1">The Founder</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">Samuel Usabuwera</h2>
             <div className="space-y-4 text-muted-foreground font-body leading-relaxed">
               <p>
@@ -275,7 +267,6 @@ const About = () => (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Governance</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Our Board Members</h2>
         </div>
         <TeamGrid members={boardMembers} />
@@ -286,7 +277,6 @@ const About = () => (
     <section className="py-20" style={{ background: "var(--section-gradient)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Our Team</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Our Management Team</h2>
         </div>
         <TeamGrid members={managementTeam} />

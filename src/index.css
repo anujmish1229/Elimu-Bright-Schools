@@ -32,6 +32,9 @@ layer(base);
 
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-ink: var(--secondary-ink);
+  --color-maroon: var(--maroon);
+  --color-maroon-foreground: var(--maroon-foreground);
 
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
@@ -91,13 +94,6 @@ layer(base);
   }
 }
 
-@utility text-gradient-gold {
-  background: var(--gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 :root {
   --background: hsl(40 30% 97%);
   --foreground: hsl(20 25% 12%);
@@ -113,6 +109,12 @@ layer(base);
 
   --secondary: hsl(38 85% 55%);
   --secondary-foreground: hsl(20 25% 12%);
+  /* Gold dark enough to read as text on the cream background */
+  --secondary-ink: hsl(30 80% 30%);
+
+  /* Maroon from the school crest */
+  --maroon: hsl(1 46% 24%);
+  --maroon-foreground: hsl(40 30% 97%);
 
   --muted: hsl(35 20% 90%);
   --muted-foreground: hsl(20 10% 45%);
@@ -134,8 +136,6 @@ layer(base);
 
   --hero-overlay: linear-gradient(135deg, hsla(152, 45%, 20%, 0.85), hsla(20, 25%, 12%, 0.7));
   --section-gradient: linear-gradient(180deg, hsl(40, 30%, 97%) 0%, hsl(35, 20%, 92%) 100%);
-  --gold-gradient: linear-gradient(135deg, hsl(38, 85%, 55%), hsl(30, 80%, 45%));
-  --green-gradient: linear-gradient(135deg, hsl(152, 45%, 28%), hsl(152, 50%, 22%));
 }
 
 .dark {
@@ -148,6 +148,9 @@ layer(base);
   --primary: hsl(152 45% 40%);
   --primary-foreground: hsl(40 30% 97%);
   --secondary: hsl(38 70% 50%);
+  --secondary-ink: hsl(38 75% 62%);
+  --maroon: hsl(1 40% 30%);
+  --maroon-foreground: hsl(40 30% 97%);
   --secondary-foreground: hsl(20 25% 12%);
   --muted: hsl(20 15% 18%);
   --muted-foreground: hsl(35 15% 60%);
@@ -172,5 +175,97 @@ layer(base);
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  /* Playfair defaults to old-style figures; numbers read better at even height */
+  .font-display {
+    font-variant-numeric: lining-nums;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-variant-numeric: lining-nums;
+  }
+
+  ::selection {
+    background-color: hsl(152 45% 28% / 0.2);
+    color: var(--foreground);
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
+}
+
+/* Buttons: one pill shape across the site */
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.8rem 1.6rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    line-height: 1.2;
+    transition:
+      background-color 180ms ease-out,
+      color 180ms ease-out,
+      border-color 180ms ease-out,
+      transform 180ms ease-out;
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn svg {
+    transition: transform 180ms ease-out;
+  }
+  .btn:hover svg {
+    transform: translateX(3px);
+  }
+  .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.0625rem;
+  }
+  .btn-sm {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.875rem;
+  }
+  .btn-gold {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+  }
+  .btn-gold:hover {
+    background-color: hsl(36 82% 47%);
+  }
+  .btn-green {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+  .btn-green:hover {
+    background-color: hsl(152 50% 21%);
+  }
+  .btn-outline-light {
+    border: 1.5px solid hsl(40 30% 97% / 0.55);
+    color: var(--primary-foreground);
+  }
+  .btn-outline-light:hover {
+    background-color: hsl(40 30% 97%);
+    border-color: hsl(40 30% 97%);
+    color: var(--foreground);
+  }
+  .btn-outline {
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+  }
+  .btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
   }
 }

@@ -116,7 +116,7 @@ const Programs = () => (
             >
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
                 {program.badge && (
-                  <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-secondary/20 text-secondary mb-3">
+                  <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-secondary/20 text-secondary-ink mb-3">
                     {program.badge}
                   </span>
                 )}
@@ -124,7 +124,7 @@ const Programs = () => (
                   <program.icon className="text-primary shrink-0" size={28} />
                   <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">{program.title}</h2>
                 </div>
-                <p className="text-secondary font-semibold text-sm mb-4 font-body italic">{program.subtitle}</p>
+                <p className="text-secondary-ink font-semibold text-sm mb-4 font-body italic">{program.subtitle}</p>
                 <div className="space-y-3 text-muted-foreground font-body leading-relaxed">
                   <p>{program.desc}</p>
                   <p>{program.detail}</p>
@@ -134,7 +134,7 @@ const Programs = () => (
                     <strong>Why This Matters:</strong> {program.why}
                   </p>
                 </div>
-                <p className="mt-3 text-sm text-secondary font-semibold font-body">{program.cta}</p>
+                <p className="mt-3 text-sm text-secondary-ink font-semibold font-body">{program.cta}</p>
               </div>
               <div className={`relative rounded-lg overflow-hidden shadow-lg min-h-[280px] ${i % 2 === 1 ? "md:order-1" : ""}`}>
                 {program.image ? (
@@ -176,7 +176,7 @@ const Programs = () => (
         </p>
         <Link
           to="/donate"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
+          className="btn btn-green"
         >
           Get Involved <ArrowRight size={18} />
         </Link>

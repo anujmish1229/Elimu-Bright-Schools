@@ -9,30 +9,22 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import {
-  Smartphone,
   Copy,
   Check,
   ExternalLink,
-  Heart,
-  ShoppingBag,
-  Briefcase,
-  Users,
   ArrowRight,
 } from "lucide-react";
 
 const otherWays = [
   {
-    icon: ShoppingBag,
     title: "Give In-Kind Support",
     desc: "Donate essential items such as solar panels and lamps, uniforms and shoes, bags and books, or construction materials like iron sheets.",
   },
   {
-    icon: Briefcase,
     title: "Partner With Us",
     desc: "We welcome collaboration with corporations, foundations, donors, and NGOs to help us scale our work and reach more children.",
   },
   {
-    icon: Users,
     title: "Volunteer",
     desc: "Share your time and skills through teaching and mentorship, skills training, storytelling, or professional expertise.",
   },
@@ -72,7 +64,7 @@ const CopyField = ({ label, value }: { label: string; value: string }) => {
       <button
         type="button"
         onClick={handleCopy}
-        className="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-md text-sm font-semibold font-body bg-primary/10 text-primary hover:bg-primary/15 transition-colors"
+        className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold font-body bg-primary/10 text-primary hover:bg-primary/15 transition-colors"
         aria-label={`Copy ${label.toLowerCase()}`}
       >
         {copied ? <Check size={16} /> : <Copy size={16} />}
@@ -106,15 +98,12 @@ const Donate = () => {
           <div className="bg-card rounded-2xl border border-border shadow-xs overflow-hidden">
             <div className="h-1.5 w-full bg-primary" />
             <div className="p-8">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Smartphone className="text-primary" size={24} />
-                </div>
+              <div className="mb-6">
                 <div>
                   <h2 className="font-display text-xl font-bold text-foreground leading-tight">
                     Give via Mobile Money
                   </h2>
-                  <p className="text-secondary text-sm font-semibold font-body">
+                  <p className="text-secondary-ink text-sm font-semibold font-body">
                     Our preferred way to receive support
                   </p>
                 </div>
@@ -189,11 +178,8 @@ const Donate = () => {
             {otherWays.map((way) => (
               <div
                 key={way.title}
-                className="bg-card rounded-xl p-6 shadow-xs border border-border text-center flex flex-col items-center"
+                className="border-t-2 border-primary pt-5 flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <way.icon className="text-primary" size={22} />
-                </div>
                 <h3 className="font-display text-lg font-bold text-foreground mb-2">{way.title}</h3>
                 <p className="text-muted-foreground font-body text-sm leading-relaxed mb-4">{way.desc}</p>
                 <Link
@@ -219,7 +205,7 @@ const Donate = () => {
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
         <div className="relative z-10 max-w-2xl mx-auto text-center px-4">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4 leading-tight md:leading-10 flex items-center justify-center gap-3">
-            <Heart size={32} /> Thank You
+            Thank You
           </h2>
           <p className="text-primary-foreground/85 font-body leading-relaxed">
             Your support turns into classrooms built, teachers paid, and children given the

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PageHero from "@/components/PageHero";
-import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const encode = (data: Record<string, string>) =>
   Object.keys(data)
@@ -43,29 +43,20 @@ const Contact = () => {
               <p className="text-muted-foreground font-body leading-relaxed mb-8">
                 Whether you want to donate, partner, volunteer, or simply learn more — we are here and eager to connect. Reach out to us directly and we will get back to you as soon as possible.
               </p>
-              <div className="space-y-6">
-                <a href="mailto:info@elimubrightschools.org" className="flex items-start gap-4 group">
-                  <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Mail size={20} />
-                  </div>
+              <div className="divide-y divide-foreground/15 border-y border-foreground/15">
+                <a href="mailto:info@elimubrightschools.org" className="block py-4 group">
                   <div>
                     <p className="font-semibold text-foreground font-body">Email</p>
-                    <p className="text-muted-foreground text-sm font-body">info@elimubrightschools.org</p>
+                    <p className="text-muted-foreground text-sm font-body group-hover:text-primary transition-colors">info@elimubrightschools.org</p>
                   </div>
                 </a>
-                <a href="tel:+256761258092" className="flex items-start gap-4 group">
-                  <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Phone size={20} />
-                  </div>
+                <a href="tel:+256761258092" className="block py-4 group">
                   <div>
                     <p className="font-semibold text-foreground font-body">Phone</p>
-                    <p className="text-muted-foreground text-sm font-body">+256 761258092</p>
+                    <p className="text-muted-foreground text-sm font-body group-hover:text-primary transition-colors">+256 761258092</p>
                   </div>
                 </a>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                    <MapPin size={20} />
-                  </div>
+                <div className="py-4">
                   <div>
                     <p className="font-semibold text-foreground font-body">Location</p>
                     <p className="text-muted-foreground text-sm font-body">
@@ -111,7 +102,7 @@ const Contact = () => {
                       required
                       value={fields.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground font-body text-sm focus:outline-hidden focus:ring-2 focus:ring-ring"
+                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:outline-hidden focus:ring-2 focus:ring-ring"
                       placeholder="Your name"
                     />
                   </div>
@@ -123,7 +114,7 @@ const Contact = () => {
                       required
                       value={fields.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground font-body text-sm focus:outline-hidden focus:ring-2 focus:ring-ring"
+                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:outline-hidden focus:ring-2 focus:ring-ring"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -135,7 +126,7 @@ const Contact = () => {
                       required
                       value={fields.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground font-body text-sm focus:outline-hidden focus:ring-2 focus:ring-ring resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:outline-hidden focus:ring-2 focus:ring-ring resize-none"
                       placeholder="How would you like to get involved?"
                     />
                   </div>
@@ -148,7 +139,7 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-md bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity font-body"
+                    className="btn btn-green w-full"
                   >
                     Send Message
                   </button>

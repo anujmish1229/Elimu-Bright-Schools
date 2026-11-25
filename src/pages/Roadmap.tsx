@@ -124,7 +124,7 @@ const Roadmap = () => (
           <p className="text-primary-foreground/85 font-body font-semibold mb-8">Together, we can change the story for thousands of children.</p>
           <Link
             to="/donate"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-secondary text-secondary-foreground font-semibold hover:opacity-90 transition-opacity"
+            className="btn btn-gold"
           >
             Join Us <ArrowRight size={18} />
           </Link>

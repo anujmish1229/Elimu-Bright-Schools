@@ -31,7 +31,7 @@ const programs = [
     detail: "These essentials may seem small, but they make a life-changing difference. They restore dignity, increase attendance, and allow children to fully participate in school.",
     why: "No child should miss out on education because they lack a uniform or a notebook.",
     cta: "Sponsor a child's school kit and help them stay in school.",
-    image: null,
+    image: "/pics/children-uniforms-supplies.jpg",
   },
   {
     icon: Utensils,
@@ -87,6 +87,18 @@ const programs = [
   },
 ];
 
+// Light bands alternate with dark ones; the dark order differs from other pages.
+const programTones = [
+  "bg-background",
+  "tone-forest",
+  "bg-[hsl(38_32%_93%)]",
+  "tone-clay",
+  "bg-background",
+  "tone-maroon",
+  "bg-[hsl(38_32%_93%)]",
+  "tone-ink",
+];
+
 const Programs = () => (
   <div>
     <PageHero
@@ -97,67 +109,62 @@ const Programs = () => (
     />
 
     {/* Intro */}
-    <section className="py-16 bg-background">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-muted-foreground font-body leading-relaxed text-lg">
+    <section className="tone-gold py-16 md:py-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="font-display text-2xl md:text-3xl leading-snug">
           At Elimu Bright Schools, we believe that education goes beyond the classroom. It is about shaping confident, capable, and self-reliant individuals. Our programs are designed to address not only the lack of access to education, but also the deeper challenges that prevent children from thriving — including poverty, hunger, and limited opportunities.
         </p>
       </div>
     </section>
 
-    {/* Programs */}
-    <section className="pb-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-20">
-          {programs.map((program, i) => (
-            <div
-              key={program.title}
-              className={`grid md:grid-cols-2 gap-10 items-stretch ${i % 2 === 1 ? "" : ""}`}
-            >
-              <div className={i % 2 === 1 ? "md:order-2" : ""}>
-                {program.badge && (
-                  <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-secondary/20 text-secondary-ink mb-3">
-                    {program.badge}
-                  </span>
-                )}
-                <div className="flex items-center gap-3 mb-2">
-                  <program.icon className="text-primary shrink-0" size={28} />
-                  <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">{program.title}</h2>
-                </div>
-                <p className="text-secondary-ink font-semibold text-sm mb-4 font-body italic">{program.subtitle}</p>
-                <div className="space-y-3 text-muted-foreground font-body leading-relaxed">
-                  <p>{program.desc}</p>
-                  <p>{program.detail}</p>
-                </div>
-                <div className="mt-4 p-4 bg-muted rounded-lg">
-                  <p className="text-sm font-body text-foreground/80">
-                    <strong>Why This Matters:</strong> {program.why}
-                  </p>
-                </div>
-                <p className="mt-3 text-sm text-secondary-ink font-semibold font-body">{program.cta}</p>
+    {/* Programs: each one gets its own band, rotating light and dark tones */}
+    {programs.map((program, i) => (
+      <section key={program.title} className={`py-16 md:py-24 ${programTones[i % programTones.length]}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-stretch">
+            <div className={i % 2 === 1 ? "md:order-2" : ""}>
+              {program.badge && (
+                <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-primary text-primary-foreground mb-4">
+                  {program.badge}
+                </span>
+              )}
+              <div className="flex items-center gap-3 mb-2">
+                <program.icon className="text-primary shrink-0" size={28} />
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">{program.title}</h2>
               </div>
-              <div className={`relative rounded-lg overflow-hidden shadow-lg min-h-[280px] ${i % 2 === 1 ? "md:order-1" : ""}`}>
-                {program.image ? (
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                    className={`absolute inset-0 w-full h-full object-cover ${program.imagePosition ?? "object-top"}`}
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-muted flex items-center justify-center">
-                    <program.icon className="text-muted-foreground/30" size={64} />
-                  </div>
-                )}
+              <p className="text-secondary-ink font-semibold mb-5 font-body italic">{program.subtitle}</p>
+              <div className="space-y-3 text-muted-foreground font-body leading-relaxed">
+                <p>{program.desc}</p>
+                <p>{program.detail}</p>
               </div>
+              <div className="mt-6 pt-4 border-t border-foreground/15">
+                <p className="text-sm font-body text-foreground/85 leading-relaxed">
+                  <strong className="text-foreground">Why This Matters:</strong> {program.why}
+                </p>
+              </div>
+              <p className="mt-4 text-sm text-secondary-ink font-semibold font-body">{program.cta}</p>
             </div>
-          ))}
+            <div className={`relative rounded-lg overflow-hidden shadow-lg min-h-[280px] ${i % 2 === 1 ? "md:order-1" : ""}`}>
+              {program.image ? (
+                <img
+                  src={program.image}
+                  alt={program.title}
+                  className={`absolute inset-0 w-full h-full object-cover ${program.imagePosition ?? "object-top"}`}
+                  loading="lazy"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-muted flex items-center justify-center">
+                  <program.icon className="text-muted-foreground/40" size={64} />
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    ))}
 
     {/* Approach & CTA */}
-    <section className="py-20" style={{ background: "var(--section-gradient)" }}>
+    <section className="py-20 md:py-28 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-display text-3xl font-bold text-foreground mb-6">Our Approach</h2>
         <p className="text-muted-foreground font-body leading-relaxed mb-6">

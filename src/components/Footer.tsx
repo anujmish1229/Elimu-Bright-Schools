@@ -83,17 +83,42 @@ const Footer = () => (
         </div>
       </div>
 
-      {/* Oversized wordmark */}
-      <p
+      {/*
+        Oversized wordmark. The viewBox is cropped to the letters' measured ink
+        edges (Playfair Display 700 at 100px, -0.03em tracking), so the word
+        spans the content width exactly at every screen size.
+      */}
+      <svg
         aria-hidden="true"
-        className="mt-16 md:mt-24 font-display font-bold text-primary leading-none pb-[0.12em] tracking-[-0.03em] whitespace-nowrap select-none text-[clamp(2rem,9vw,7.75rem)]"
+        viewBox="3.36 -78.28 914.26 97.08"
+        className="mt-16 md:mt-24 block w-full h-auto text-primary select-none"
       >
-        Elimu Bright Schools
-      </p>
+        <text
+          x="0"
+          y="0"
+          fill="currentColor"
+          fontFamily="'Playfair Display', serif"
+          fontWeight="700"
+          fontSize="100"
+          letterSpacing="-3"
+        >
+          Elimu Bright Schools
+        </text>
+      </svg>
 
-      <div className="mt-6 py-6 border-t border-foreground/15 flex flex-col sm:flex-row gap-2 sm:justify-between text-xs text-muted-foreground font-body">
+      <div className="mt-5 md:mt-8 py-6 border-t border-foreground/15 flex flex-col sm:flex-row gap-2 sm:justify-between text-xs text-muted-foreground font-body">
         <p>© {new Date().getFullYear()} Elimu Bright Schools. All rights reserved.</p>
-        <p>A community-based education charity in Uganda</p>
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-6">
+          <p>A community-based education charity in Uganda</p>
+          <a
+            href="https://anujmishra.dev"
+            target="_blank"
+            rel="noopener"
+            className="text-muted-foreground/70 hover:text-primary transition-colors"
+          >
+            Website by Anuj Mishra
+          </a>
+        </div>
       </div>
     </div>
   </footer>

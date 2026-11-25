@@ -34,41 +34,43 @@ const Contact = () => {
         subtitle="Want to support, partner, or learn more? We'd love to hear from you."
       />
 
-      <section className="py-20 bg-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
+      <section className="grid md:grid-cols-2">
             {/* Contact Info */}
-            <div>
-              <h2 className="font-display text-2xl font-bold text-foreground mb-6">Get in Touch</h2>
-              <p className="text-muted-foreground font-body leading-relaxed mb-8">
+            <div className="tone-gold px-6 sm:px-10 lg:px-16 py-16 md:py-24">
+            <div className="max-w-md md:ml-auto">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">Get in Touch</h2>
+              <p className="text-muted-foreground font-body text-lg leading-relaxed mb-10">
                 Whether you want to donate, partner, volunteer, or simply learn more — we are here and eager to connect. Reach out to us directly and we will get back to you as soon as possible.
               </p>
               <div className="divide-y divide-foreground/15 border-y border-foreground/15">
                 <a href="mailto:info@elimubrightschools.org" className="block py-4 group">
                   <div>
                     <p className="font-semibold text-foreground font-body">Email</p>
-                    <p className="text-muted-foreground text-sm font-body group-hover:text-primary transition-colors">info@elimubrightschools.org</p>
+                    <p className="text-muted-foreground text-lg font-body group-hover:text-primary transition-colors">info@elimubrightschools.org</p>
                   </div>
                 </a>
                 <a href="tel:+256761258092" className="block py-4 group">
                   <div>
                     <p className="font-semibold text-foreground font-body">Phone</p>
-                    <p className="text-muted-foreground text-sm font-body group-hover:text-primary transition-colors">+256 761258092</p>
+                    <p className="text-muted-foreground text-lg font-body group-hover:text-primary transition-colors">+256 761258092</p>
                   </div>
                 </a>
                 <div className="py-4">
                   <div>
                     <p className="font-semibold text-foreground font-body">Location</p>
-                    <p className="text-muted-foreground text-sm font-body">
+                    <p className="text-muted-foreground text-lg font-body">
                       Hoima District, Kabaale Sub-county<br />Western Uganda
                     </p>
                   </div>
                 </div>
               </div>
             </div>
+            </div>
 
             {/* Contact Form */}
-            <div className="bg-card rounded-lg p-8 shadow-xs border border-border">
+            <div className="bg-background px-6 sm:px-10 lg:px-16 py-16 md:py-24">
+            <div className="max-w-md">
+            <div>
               <h3 className="font-display text-xl font-semibold text-foreground mb-6">Send a Message</h3>
 
               {submitted ? (

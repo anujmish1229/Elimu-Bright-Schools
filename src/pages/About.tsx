@@ -34,57 +34,56 @@ const values = [
   },
 ];
 
-type Person = { name: string; role: string; image?: string };
+type TeamMember = { name: string; role: string; image?: string };
 
-const managementTeam: Person[] = [
+const boardMembers: TeamMember[] = [
+  { name: "Johnam Kambasu", role: "Board Member · Finance Director", image: "/pics/board/Johnam_Kambasu-Finance_Director.jpg" },
+  { name: "Vaolah Amumpaire", role: "Board Member", image: "/pics/board/Vaolah_Amumpaire-Board_Member.jpg" },
+  { name: "Candy Kevine", role: "Board Member", image: "/pics/board/Candy_Kevine-Board_Member.jpg" },
+  { name: "Steven R Ongaria", role: "Board Member" },
+];
+
+const managementTeam: TeamMember[] = [
   { name: "Samuel Usabuwera", role: "CEO", image: "/pics/board/Samuel_Usabuwera-CEO.jpg" },
   { name: "Isaac Felecian", role: "Fundraising Assistant", image: "/pics/board/Isaac_Felecian-Fundraising_Assistant.jpg" },
-  { name: "Johnam Kambasu", role: "Finance Director", image: "/pics/board/Johnam_Kambasu-Finance_Director.jpg" },
   { name: "Moses Kasereka", role: "Finance Officer", image: "/pics/board/Moses_Kasereka-Finance_Office.jpg" },
   { name: "Mugisa Latif", role: "Programs Manager", image: "/pics/board/Mugisa_Latif-Programs_Manager.jpg" },
   { name: "Esther Mugisha", role: "Public Relations Manager", image: "/pics/board/Esther_Mugisha-Public_Relations_Manager.jpg" },
 ];
 
-// Members without a photo yet show an initials placeholder; add `image` once a photo is available.
-const boardMembers: Person[] = [
-  { name: "Kevin Dovinna", role: "Board Member", image: "/pics/board/Kevin_Dovinna-Board_Member.jpg" },
-  { name: "Vaolah Amumpaire", role: "Board Member" },
-  { name: "Candy Kevine", role: "Board Member" },
-  { name: "Steven R Ongaria", role: "Board Member" },
-  { name: "Ekta Mishra", role: "Board Member" },
-];
-
 const initials = (name: string) =>
   name
     .split(" ")
-    .filter(Boolean)
+    .filter((part) => part.length > 1)
     .map((part) => part[0])
     .slice(0, 2)
-    .join("")
-    .toUpperCase();
+    .join("");
 
-const PersonCard = ({ name, role, image }: Person) => (
-  <div className="flex flex-col items-center text-center w-36 sm:w-40 lg:w-64">
-    <div className="relative w-full rounded-xl overflow-hidden shadow-md mb-4" style={{ paddingBottom: "120%" }}>
-      {image ? (
-        <img
-          src={image}
-          alt={name}
-          className="absolute inset-0 w-full h-full object-cover object-top"
-          loading="lazy"
-        />
-      ) : (
-        <div
-          className="absolute inset-0 flex items-center justify-center bg-primary text-primary-foreground font-display text-4xl font-bold"
-          role="img"
-          aria-label={name}
-        >
-          {initials(name)}
+const TeamGrid = ({ members }: { members: TeamMember[] }) => (
+  <div className="flex flex-wrap justify-center gap-6">
+    {members.map((member) => (
+      <div key={member.name} className="flex flex-col items-center text-center w-36 sm:w-40 lg:w-56">
+        <div className="relative w-full rounded-xl overflow-hidden shadow-md mb-4 bg-muted" style={{ paddingBottom: "120%" }}>
+          {member.image ? (
+            <img
+              src={member.image}
+              alt={member.name}
+              className="absolute inset-0 w-full h-full object-cover object-top"
+              loading="lazy"
+            />
+          ) : (
+            <div
+              className="absolute inset-0 flex items-center justify-center font-display text-4xl font-semibold text-muted-foreground"
+              aria-hidden="true"
+            >
+              {initials(member.name)}
+            </div>
+          )}
         </div>
-      )}
-    </div>
-    <h3 className="font-display font-semibold text-foreground text-base leading-snug">{name}</h3>
-    <p className="text-secondary text-sm font-body mt-1">{role}</p>
+        <h3 className="font-display font-semibold text-foreground text-base leading-snug">{member.name}</h3>
+        <p className="text-secondary text-sm font-body mt-1">{member.role}</p>
+      </div>
+    ))}
   </div>
 );
 
@@ -272,33 +271,25 @@ const About = () => (
       </div>
     </section>
 
-    {/* Management Team */}
+    {/* Board Members */}
     <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Our Team</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Our Management Team</h2>
-        </div>
-        <div className="flex flex-wrap justify-center gap-6">
-          {managementTeam.map((member) => (
-            <PersonCard key={member.name} {...member} />
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Board of Directors */}
-    <section className="py-20" style={{ background: "var(--section-gradient)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Governance</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Our Board Members</h2>
         </div>
-        <div className="flex flex-wrap justify-center gap-6">
-          {boardMembers.map((member) => (
-            <PersonCard key={member.name} {...member} />
-          ))}
+        <TeamGrid members={boardMembers} />
+      </div>
+    </section>
+
+    {/* Management Team */}
+    <section className="py-20" style={{ background: "var(--section-gradient)" }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <p className="text-secondary font-semibold text-sm uppercase tracking-widest mb-2 font-body">Our Team</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Our Management Team</h2>
         </div>
+        <TeamGrid members={managementTeam} />
       </div>
     </section>
   </div>

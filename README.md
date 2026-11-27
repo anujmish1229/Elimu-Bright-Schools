@@ -51,7 +51,7 @@ I built and deployed the website: page structure, React front end, the donation 
 | ---------- | -------------------------------------------------- |
 | Framework  | React 19 + TypeScript                              |
 | Build tool | Vite 8                                             |
-| Routing    | React Router 7                                     |
+| Routing    | React Router 8                                     |
 | Styling    | Tailwind CSS 4 + shadcn/ui primitives (Radix)      |
 | Testing    | Vitest 5, Testing Library, jsdom                   |
 | Hosting    | Netlify (auto-deploys from `main`)                 |

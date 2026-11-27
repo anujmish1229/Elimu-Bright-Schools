@@ -4,8 +4,25 @@ Website for **Elimu Bright Schools**, a school founded by young refugee leaders 
 
 **Live site:** https://elimubrightschools.org
 
-![Elimu Bright Schools home page](docs/screenshot.png)
-<!-- TODO: add a 1280×800 screenshot of the home page at docs/screenshot.png -->
+![Elimu Bright Schools home page](docs/screenshots/home.jpg)
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/programs.jpg" alt="Elimu Bright Schools programs page"></td>
+    <td width="50%"><img src="docs/screenshots/roadmap.jpg" alt="Elimu Bright Schools roadmap page"></td>
+  </tr>
+  <tr>
+    <td align="center">Programs</td>
+    <td align="center">Roadmap</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/mobile-home.jpg" width="260" alt="Home on a phone"><br>Home on a phone</td>
+    <td align="center"><img src="docs/screenshots/mobile-programs.jpg" width="260" alt="Programs on a phone"><br>Programs on a phone</td>
+  </tr>
+</table>
 
 ## Who it's for
 
